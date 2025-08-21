@@ -4,22 +4,23 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 
-const routes = (
-  <Router>
-    <Routes>
-       <Route path="/" element={<Navigate to="/login" />} />
-      <Route path='/dashboard' exact element={<Home/>}/>
-      <Route path='/Login' exact element={<Login/>}/>
-      <Route path='/Signup' exact element={<Signup/>}/>
-    </Routes>
-  </Router>
-);
 const App = () => {
   return (
-    <div>
-      {routes}
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        {/* Redirect root path "/" to Login page */}
+        <Route path="/" element={<Navigate to="/login" />} />
 
-export default App
+        {/* Your main routes */}
+        <Route path="/dashboard" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Catch-all for unknown routes (optional) */}
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
