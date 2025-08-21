@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.use(cors({
   origin:[ 
-   "https://your-frontend.vercel.app", 
+   "https://note-app-application-qp48.vercel.app/", 
     "http://localhost:5173",  
    ],// replace with your actual Vercel URL
   methods: ["GET", "POST", "PUT", "DELETE"],
