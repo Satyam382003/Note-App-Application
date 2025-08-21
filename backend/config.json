@@ -1,3 +1,3 @@
 {
-    "connectionString":"mongodb+srv://satyampandey382003:Satyam123@noteapp.etcv6ag.mongodb.net/?retryWrites=true&w=majority&appName=NoteApp"
+    "MONGO_URI":"mongodb+srv://satyampandey382003:Satyam123@noteapp.etcv6ag.mongodb.net/?retryWrites=true&w=majority&appName=NoteApp"
 }
