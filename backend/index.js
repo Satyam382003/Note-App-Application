@@ -23,7 +23,10 @@ const {authenticateToken} = require('./utilities')
 app.use(express.json());
 
 app.use(cors({
-  origin: "https://your-frontend.vercel.app", // replace with your actual Vercel URL
+  origin:[ 
+   "https://your-frontend.vercel.app", 
+    "http://localhost:5173",  
+   ],// replace with your actual Vercel URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
