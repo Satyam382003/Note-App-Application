@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const config = require('./config.json');
+// const config = require('./config.json');
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -22,11 +22,11 @@ const {authenticateToken} = require('./utilities')
 
 app.use(express.json());
 
-app.use(
-    cors({
-        origin: "*",
-    })
-);
+app.use(cors({
+  origin: "https://your-frontend.vercel.app", // replace with your actual Vercel URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.get('/', (req, res) => {
     res.json({ data: "hello" })
